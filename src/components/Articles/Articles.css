@@ -1,0 +1,41 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&family=Roboto:wght@500&display=swap');
+
+.articles {
+    margin: 20px;
+    text-align: center;
+}
+
+h2 {
+    font-family: 'Roboto', sans-serif;
+    font-size: 38px;
+    color: #444444;
+}
+
+h3 {
+    font-family: 'Roboto', sans-serif;
+    font-size: 30px;
+    color: #3d3d3d;
+}
+
+li {
+    list-style-type: none;
+}
+
+p {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    text-align: justify;
+}
+
+.date {
+    font-size: 15px;
+    font-weight: bold;
+    color: #474747;
+    text-align: right;
+}
+
+.author {
+    font-size: 15px;
+    color: #7b7b7b;
+    text-align: left;
+}

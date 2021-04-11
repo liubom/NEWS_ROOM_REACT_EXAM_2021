@@ -17,8 +17,10 @@ function App() {
 
     return (
         <div className="App">
-            <h2>News Room</h2>
-            <Articles articlesData={state}/>
+            <nav>NAVIGATION</nav>
+                <h2>News Room</h2>
+                <Articles articlesData={state}/>
+            <footer>FOOTER</footer>
         </div>
     );
 }
