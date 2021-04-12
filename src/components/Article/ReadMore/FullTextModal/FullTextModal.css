@@ -1,14 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&family=Roboto:wght@500&display=swap');
+
 .modal {
     background: rgba(0, 0, 0, 0.3);
     position: fixed;
+    overflow: auto;
     top: 0;
     right: 0;
     bottom: 0;
     left: 0;
     padding: 30px;
 }
+
 .modal_content {
-    max-width: 500px;
+    max-width: 800px;
     margin: 10vh auto;
     background: white;
     padding: 30px;
@@ -27,4 +31,8 @@
 
 .readArticle:focus {
     outline: none;
+}
+
+img {
+    max-width: 100%;
 }
