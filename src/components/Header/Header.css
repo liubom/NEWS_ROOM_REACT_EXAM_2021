@@ -1,0 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&family=Roboto:wght@500&display=swap');
+
+.mainHeader {
+    position: fixed;
+    width: 100%;
+    margin-bottom: 30px;
+    background-color: #fff;
+    opacity: 70%;
+}
+
+.siteLogo {
+    font-family: 'Roboto', sans-serif;
+    font-size: 34px;
+    color: black;
+}

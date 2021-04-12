@@ -1,6 +1,10 @@
 import React, {useState, useEffect} from "react";
+import {BrowserRouter as Router, Switch, Route, Link, useRouteMatch} from 'react-router-dom';
+import Header from "./components/Header/Header";
+import Navigation from "./components/Header/Navigation/Navigation";
 import Articles from "./components/Articles/Articles";
 import './App.css';
+import Footer from "./components/Footer/Footer";
 
 
 function App() {
@@ -17,10 +21,25 @@ function App() {
 
     return (
         <div className="App">
-            <nav>NAVIGATION</nav>
-                <h2>News Room</h2>
-                <Articles articlesData={state}/>
-            <footer>FOOTER</footer>
+            <Router>
+                <Header/>
+                <Switch>
+                    <Route exact path='/'>
+                        <h2 style={{paddingTop: 60 + 'px'}}>Home Page</h2>
+                    </Route>
+                    <Route path='/articles'>
+                        <Articles articlesData={state}/>
+                    </Route>
+                    <Route path='/contact'>
+                        <h2 style={{paddingTop: 60 + 'px'}}>Contact Page</h2>
+                    </Route>
+                    <Route path='/about'>
+                        <h2 style={{paddingTop: 60 + 'px'}}>About Page</h2>
+                    </Route>
+                </Switch>
+            </Router>
+
+            <Footer/>
         </div>
     );
 }

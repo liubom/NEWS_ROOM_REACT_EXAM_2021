@@ -1,0 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&family=Roboto:wght@500&display=swap');
+.nav {
+    border-bottom: coral solid 3px;
+}
+
+.navLink {
+    text-decoration: none;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    color: black;
+    margin-right: 25px;
+}

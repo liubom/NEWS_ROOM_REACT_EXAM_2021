@@ -1,68 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&family=Roboto:wght@500&display=swap');
 
-.articles {
-    margin: auto;
-    text-align: center;
-
-}
-
-h2 {
-    font-family: 'Roboto', sans-serif;
-    font-size: 34px;
-    color: #444444;
-}
-
-.articleTitle {
-    font-family: 'Roboto', sans-serif;
-    font-size: 35px;
-    color: #3d3d3d;
-    margin: 15px 0;
-}
-
-li {
-    list-style-type: none;
-}
-
 .categoryTitle {
     text-align: center;
 }
 
-.article {
-    text-align: center;
-    width: 60%;
-    display: block;
-    clear: both;
-}
-
-.date {
-    font-size: 15px;
-    color: #474747;
-    text-align: right;
-}
-
-.author {
-    font-size: 15px;
-    color: #7b7b7b;
-    text-align: left;
-}
-
-.img {
-    max-width: 300px;
-    display: block;
-    float: left;
-    margin-right: 10px;
-
-}
-
-.articleText {
-
-    font-family: 'Montserrat', sans-serif;
-    font-size: 15px;
-    display: block;
-    text-align: justify;
-}
-
-.articleMain {
-    height: 200px;
-    margin-bottom: 35px;
+.articles {
+    padding-top: 60px;
 }

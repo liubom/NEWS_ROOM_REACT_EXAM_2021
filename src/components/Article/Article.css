@@ -1,11 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&family=Roboto:wght@500&display=swap');
 
-.articles {
-    margin: auto;
-    text-align: center;
-
-}
-
 h2 {
     font-family: 'Roboto', sans-serif;
     font-size: 34px;
@@ -22,40 +16,59 @@ h2 {
 
 .article {
     text-align: center;
-    width: 60%;
     display: block;
     clear: both;
+    margin-bottom: 35px;
 }
 
-.date {
-    font-size: 15px;
+.articleDate {
+    height: 20px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
     color: #474747;
+    display: block;
     text-align: right;
 }
 
-.author {
-    font-size: 15px;
+.articleAuthor {
+    height: 20px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 12px;
     color: #7b7b7b;
-    text-align: left;
+    display: block;
+    text-align: right;
+}
+
+.articleBottom{
+    margin: auto;
+    width: 60%;
+}
+
+img.articleImage {
+    max-width: 250px;
 }
 
 .img {
-    max-width: 300px;
     display: block;
     float: left;
-    margin-right: 10px;
+    margin-right: 20px;
 
 }
 
 .articleText {
-
+    width: 600px;
     font-family: 'Montserrat', sans-serif;
     font-size: 15px;
+    float: left;
     display: block;
     text-align: justify;
+    padding: 0 0 0 10px;
+    border-left: coral solid 3px;
 }
 
 .articleMain {
-    height: 200px;
-    margin-bottom: 35px;
+    margin: 0 20%;
+    display: block;
+    height: 180px;
+    align-content: center;
 }
