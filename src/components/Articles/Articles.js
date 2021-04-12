@@ -9,7 +9,10 @@ const Articles = (props) => {
             <ul>
                 {props.articlesData.map(a =>
                     <li key={a.id}><h3>{a.title}</h3>
-                        <p>{a.content}</p>
+                        <div className='articleMain'>
+                            <img src={a.img} alt={a.title} className='articleImg'/>
+                            <p className='articleContent'>{a.content}</p>
+                        </div>
                         <p><span className='author'>Author: {a.author}</span> - <span className='date'>{a.date}</span></p>
                     </li>
                 )}
