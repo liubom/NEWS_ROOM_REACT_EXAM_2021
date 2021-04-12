@@ -1,9 +1,9 @@
 .likeArticle {
-    width: 150px;
+    width: 130px;
     background-color: #1a66d4;
     color: white;
     font-family: 'Montserrat', sans-serif;
-    font-size: 14px;
+    font-size: 12px;
     border: none;
     cursor: pointer;
 }
@@ -13,11 +13,11 @@
 }
 
 .likedArticle {
-    width: 150px;
+    width: 130px;
     background-color: #1ab377;
     color: white;
     font-family: 'Montserrat', sans-serif;
-    font-size: 14px;
+    font-size: 12px;
     border: none;
     cursor: pointer;
 }

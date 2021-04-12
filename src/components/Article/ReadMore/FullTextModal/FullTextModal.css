@@ -1,0 +1,30 @@
+.modal {
+    background: rgba(0, 0, 0, 0.3);
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding: 30px;
+}
+.modal_content {
+    max-width: 500px;
+    margin: 10vh auto;
+    background: white;
+    padding: 30px;
+    border-radius: 5px;
+}
+
+.readArticle {
+    width: 120px;
+    background-color: coral;
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    font-size: 12px;
+    border: none;
+    cursor: pointer;
+}
+
+.readArticle:focus {
+    outline: none;
+}

@@ -6,7 +6,9 @@ const Articles = (props) => {
     return (
         <div className='articles'>
             <h2 className='categoryTitle'>Latest News</h2>
-            <Article articles={props.articlesData}/>
+            {props.articlesData.map(a =>
+                <Article a={a}/>
+            )}
         </div>
     )
 };

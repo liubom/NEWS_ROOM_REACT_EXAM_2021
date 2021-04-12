@@ -1,11 +1,11 @@
 import React from "react";
 import ('./ReadMore.css')
 
-const ReadMore = () => {
+const ReadMore = (props) => {
 
     return (
         <p>
-            <button className='readArticle'>Read Full Text</button>
+            <button className='readArticle' onClick={props.toggleModal}>Read Full Text</button>
         </p>
     )
 }
