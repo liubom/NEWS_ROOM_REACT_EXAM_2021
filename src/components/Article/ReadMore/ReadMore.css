@@ -1,0 +1,13 @@
+.readArticle {
+    width: 120px;
+    background-color: coral;
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    font-size: 12px;
+    border: none;
+    cursor: pointer;
+}
+
+.readArticle:focus {
+    outline: none;
+}

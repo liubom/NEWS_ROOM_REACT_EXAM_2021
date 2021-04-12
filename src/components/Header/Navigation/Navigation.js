@@ -1,5 +1,4 @@
-import React from "react";
-import {BrowserRouter as Router, Switch, Route, Link, useRouteMatch} from 'react-router-dom';
+import {Link} from 'react-router-dom';
 
 import ('./Navigation.css');
 
@@ -7,13 +6,15 @@ const Navigation = () => {
 
     return (
         <div className='nav'>
-            <Link className='navLink' to="/">Home</Link>
+            <Link className='navLink' to="/">HOME</Link>
             &nbsp;
-            <Link className='navLink' to="/articles" >Articles</Link>
+            <Link className='navLink' to="/articles" >ALL ARTICLES</Link>
             &nbsp;
-            <Link className='navLink' to="/contact">Contact</Link>
+            <Link className='navLink' to="/articles/liked" >FAVORITE ARTICLES</Link>
             &nbsp;
-            <Link className='navLink' to="/about">About</Link>
+            <Link className='navLink' to="/contact">CONTACT</Link>
+            &nbsp;
+            <Link className='navLink' to="/about">ABOUT</Link>
         </div>
     )
 }

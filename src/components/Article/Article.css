@@ -8,9 +8,9 @@ h2 {
 
 .articleTitle {
     font-family: 'Roboto', sans-serif;
-    font-size: 35px;
+    font-size: 30px;
     color: #3d3d3d;
-    margin: 15px 0;
+    margin: 12px 0;
 }
 
 
@@ -39,13 +39,13 @@ h2 {
     text-align: right;
 }
 
-.articleBottom{
+.articleBottom {
     margin: auto;
     width: 60%;
 }
 
 img.articleImage {
-    max-width: 250px;
+    max-width: 220px;
 }
 
 .img {
@@ -69,6 +69,6 @@ img.articleImage {
 .articleMain {
     margin: 0 20%;
     display: block;
-    height: 180px;
+    height: 160px;
     align-content: center;
 }

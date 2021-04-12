@@ -1,13 +1,17 @@
 import React from "react";
 import ('./Footer.css');
 
-const Footer = (props) => {
+const Footer = () => {
+
+    const getDate = () => {
+        let now = new Date;
+        return now.getFullYear();
+    }
 
     return (
         <div className='mainFooter'>
-            FOOTER
+            News-Room.info &copy; <span>{getDate()}</span>
         </div>
-
     )
 }
 
