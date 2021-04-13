@@ -29,7 +29,7 @@ const Article = (props) => {
                 <div className='articleBottom'>
                     <div key={props.a.id + 'articleDate'} className='articleDate'>{props.a.date}</div>
                     <div key={props.a.id + 'articleAuthor'} className='articleAuthor'>Author: {props.a.author}</div>
-                    <LikeArticleButton buttonKey={props.a.id + 'likeArticle'}/>
+                    <LikeArticleButton buttonKey={props.a.id + 'likeArticle'} a={props.a}/>
                 </div>
             </div>
         </>

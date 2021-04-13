@@ -2,8 +2,9 @@ import {useState, useEffect} from "react";
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 import Header from "./components/Header/Header";
 import Articles from "./components/Articles/Articles";
-import './App.css';
 import Footer from "./components/Footer/Footer";
+import './App.css';
+
 
 
 function App() {

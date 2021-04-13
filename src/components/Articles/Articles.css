@@ -6,4 +6,5 @@
 
 .articles {
     padding-top: 60px;
+    min-width: 760px;
 }

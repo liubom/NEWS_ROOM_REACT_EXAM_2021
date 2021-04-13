@@ -1,4 +1,5 @@
 .likeArticle {
+    float: right;
     width: 130px;
     background-color: #1a66d4;
     color: white;
@@ -13,6 +14,7 @@
 }
 
 .likedArticle {
+    float: right;
     width: 130px;
     background-color: #1ab377;
     color: white;

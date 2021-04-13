@@ -9,7 +9,6 @@ const FullTextModal = (props) => {
     return (
         <div className="modal">
             <div className="modal_content">
-
                 <img src={props.aData.img} alt={props.aData.title}/>
 
                 <h3>{props.aData.title}</h3>

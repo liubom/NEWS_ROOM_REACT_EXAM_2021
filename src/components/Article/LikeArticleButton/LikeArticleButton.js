@@ -2,16 +2,55 @@ import {useState} from "react";
 
 import ('./LikeArticleButton.css');
 
+
 const LikeArticleButton = (props) => {
 
-    const [state, setSate] = useState({classN: "likeArticle", buttonText: 'Like this article'});
+    const userName = 'petko';
+    localStorage.setItem('user', userName);
+    const currentUser = localStorage.getItem('user');
 
-    const likeArticle = (e) => {
-        //console.log(e.target.parentElement.firstElementChild.innerHTML);
-        setSate({classN: "likedArticle", buttonText: 'You like this article'});
-        //console.log(state)
+    const currentLikes = JSON.parse(localStorage.getItem('likedArticles'));
+    const articleID = props.a.id;
+    let isLikedFromUser = '';
+    let isCurrentLikes = !!currentLikes;
+
+    if (isCurrentLikes) {
+        isLikedFromUser = currentLikes.findIndex(u => {
+            return u.likes.includes(articleID) && u.user === currentUser;
+        })
+
     }
 
+    const [state, setSate] = useState(isLikedFromUser < 0 ? {
+        classN: "likeArticle",
+        buttonText: 'You like this article'
+    } : {classN: "likedArticle", buttonText: 'You like this article'});
+
+    const likeArticle = (e) => {
+
+        if (!isCurrentLikes) {
+            let likedArticles = JSON.stringify([{user: userName, likes: [articleID]}]);
+            localStorage.setItem('likedArticles', likedArticles);
+            setSate({classN: "likedArticle", buttonText: 'You like this article'});
+        } else {
+            let currentLikes = JSON.parse(localStorage.getItem('likedArticles'));
+            let isLiker = currentLikes.findIndex((u) => {
+                return u.user === currentUser;
+            });
+
+            if (isLiker < 0) {
+                currentLikes.push({user: currentUser, likes: [articleID]});
+                setSate({classN: "likedArticle", buttonText: 'You like this article'});
+                localStorage.setItem('likedArticles', JSON.stringify(currentLikes));
+            } else {
+                if (!currentLikes[isLiker].likes.includes(articleID)) {
+                    currentLikes[isLiker].likes.push(articleID);
+                    localStorage.setItem('likedArticles', JSON.stringify(currentLikes));
+                    setSate({classN: "likedArticle", buttonText: 'You like this article'});
+                }
+            }
+        }
+    }
     return (
         <button className={state.classN} onClick={likeArticle}>{state.buttonText}</button>
     )
