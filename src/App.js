@@ -19,18 +19,39 @@ function App() {
             });
     }, []);
 
+    const currentUser = localStorage.getItem('user');
+
+    if (currentUser) {
+        return (
+            <div className="App">
+                <Router>
+                    <Header/>
+                    <Switch>
+                        <Route exaxt path='/'>
+                            <Articles articlesData={state}/>
+                        </Route>
+                        <Route exact path='/liked'>
+                            <Articles articlesData={state}/>
+                        </Route>
+                        <Route exact path='/contact'>
+                            <h2 style={{paddingTop: 60 + 'px'}}>Contact Page</h2>
+                        </Route>
+                        <Route exact path='/about'>
+                            <h2 style={{paddingTop: 60 + 'px'}}>About Page</h2>
+                        </Route>
+                    </Switch>
+                </Router>
+                <Footer/>
+            </div>
+        );
+    }
+
     return (
         <div className="App">
             <Router>
                 <Header/>
                 <Switch>
                     <Route exact path='/'>
-                        <h2 style={{paddingTop: 60 + 'px'}}>Home Page</h2>
-                    </Route>
-                    <Route path='/articles'>
-                        <Articles articlesData={state}/>
-                    </Route>
-                    <Route exact path='/articles/liked'>
                         <Articles articlesData={state}/>
                     </Route>
                     <Route path='/contact'>
@@ -38,6 +59,9 @@ function App() {
                     </Route>
                     <Route path='/about'>
                         <h2 style={{paddingTop: 60 + 'px'}}>About Page</h2>
+                    </Route>
+                    <Route path='/login'>
+                        <h2 style={{paddingTop: 60 + 'px'}}>Login Page</h2>
                     </Route>
                 </Switch>
             </Router>
