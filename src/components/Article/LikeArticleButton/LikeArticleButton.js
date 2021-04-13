@@ -5,7 +5,7 @@ import ('./LikeArticleButton.css');
 
 const LikeArticleButton = (props) => {
 
-    const userName = 'petko';
+    const userName = 'liubo';
     localStorage.setItem('user', userName);
     const currentUser = localStorage.getItem('user');
 
@@ -13,17 +13,18 @@ const LikeArticleButton = (props) => {
     const articleID = props.a.id;
     let isLikedFromUser = '';
     let isCurrentLikes = !!currentLikes;
-
+    
     if (isCurrentLikes) {
         isLikedFromUser = currentLikes.findIndex(u => {
             return u.likes.includes(articleID) && u.user === currentUser;
         })
-
+    } else {
+        isLikedFromUser = -1;
     }
 
     const [state, setSate] = useState(isLikedFromUser < 0 ? {
         classN: "likeArticle",
-        buttonText: 'You like this article'
+        buttonText: 'Like this article'
     } : {classN: "likedArticle", buttonText: 'You like this article'});
 
     const likeArticle = (e) => {
