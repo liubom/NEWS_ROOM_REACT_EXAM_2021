@@ -1,6 +1,15 @@
 {
   "articles": [
     {
+      "id": 100,
+      "img": "https://images.idgesg.net/images/article/2020/05/ip_winners-and-losers_chess_check-mate_by-rawf8-getty-images_1190439498-100840985-large.jpg",
+      "title": "Is JavaScript the new Java?",
+      "preview": "Sorry, Java, but JavaScript's success in the browser, on the server, and in mobile have some believing it’s the real ‘Write once, run anywhere’ programming language.",
+      "content": "Has JavaScript displaced Java as the new “Write once, run anywhere” programming language? It all depends on your perspective. And with technologies such as WebAssembly arriving on the scene, Java could get a boost in a newfangled “write once, compile anywhere” paradigm.\n\nJava will run wherever the JVM works, providing portability across many operating systems and hardware platforms including mobile and embedded devices. But JavaScript, always crucial to in-browser applications, now works for desktop applications via technology such as the Electron framework, for mobile applications via frameworks like React Native, and for web back ends through Node.js and Deno, notes developer Shalitha Suranga, author of the Neutralino JavaScript/TypeScript framework.\n\n[ What is GitOps? Extending devops to Kubernetes and beyond ]\nJavaScript even works for IoT and robotics development, through tools such as NodeMCU. “Nowadays, whatever we can do with Java can be done with JavaScript as well,” said Suranga, a software engineer at digital products builder 99x and an Apache project management committee member. He recently authored an opinion piece on Medium arguing that JavaScript, not Java, is today’s “Write once, run anywhere” language.",
+      "date": "14/04/2021",
+      "author": "News-Room.info"
+    },
+    {
       "id": 101,
       "img": "https://images.idgesg.net/images/article/2020/09/calendar_pages_flipping_through_months_time_schedules_past_future_history_whats_next_by_microstockhub_gettyimages-902635032_2400x1600-100859562-large.jpg",
       "title": "Noteworthy technology acquisitions 2021",

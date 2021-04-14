@@ -1,8 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&family=Roboto:wght@500&display=swap');
 
 .mainFooter {
-    border-top: coral solid 3px;
+    border-top: coral solid 2px;
     font-family: 'Roboto', sans-serif;
     font-size: 15px;
-    color: coral;
+    color: black;
+    background-color: white;
+    opacity: 70%;
+    padding-top: 10px;
+    position: fixed;
+    bottom: 5px;
+    left: 0;
+    right: 0;
+    height: 30px;
 }

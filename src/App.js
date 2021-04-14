@@ -5,6 +5,7 @@ import Header from "./components/Header/Header";
 import Articles from "./components/Articles/Articles";
 import Footer from "./components/Footer/Footer";
 import './App.css';
+import FavoriteArticles from "./components/Articles/FavoriteArticles/FavoriteArticles";
 
 function App() {
 
@@ -22,9 +23,11 @@ function App() {
 
 
     const setLoginUser = (value) => {
-        setUser(value);
-        setState([...state])
-        localStorage.setItem('user', value);
+        if (value.trim().length > 4) {
+            localStorage.setItem('user', value);
+            setUser(value);
+            setState([...state]);
+        }
     }
 
     const logoutUser = () => {
@@ -34,6 +37,15 @@ function App() {
     }
 
     const currentUser = localStorage.getItem('user');
+
+    const allLikedArticles = localStorage.getItem('likedArticles')? JSON.parse(localStorage.getItem('likedArticles')) : []; // Проверка дали съществува
+
+    const userLikes = allLikedArticles.filter(a => {
+        return a.user === currentUser
+
+    });
+
+    const userLikedArticlesIDs = userLikes[0] ? userLikes[0].likes : []; //Проверка
 
     if (currentUser) {
         return (
@@ -47,7 +59,7 @@ function App() {
                             <Articles articlesData={state}/>
                         </Route>
                         <Route path='/liked'>
-                            <Articles articlesData={state}/>
+                            <FavoriteArticles allArticles={state} likes={userLikedArticlesIDs}/>
                         </Route>
                         <Route path='/contact'>
                             <h2 style={{paddingTop: 60 + 'px'}}>Contact Page</h2>

@@ -1,0 +1,20 @@
+button.login {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    color: darkcyan;
+    background-color: white;
+    border: none;
+    cursor: pointer;
+}
+
+button.login:focus{
+    outline: none;
+}
+
+input.login {
+    border: none;
+    outline: none;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12px;
+    color: black;
+}

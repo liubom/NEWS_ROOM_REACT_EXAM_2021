@@ -1,0 +1,12 @@
+button.logout {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    color: coral;
+    background-color: white;
+    border: none;
+    cursor: pointer;
+}
+
+button.logout:focus{
+    outline: none;
+}

@@ -1,5 +1,7 @@
 import {Link} from 'react-router-dom';
-import React from "react";
+import Login from "./Login/Login";
+import Logout from "./Logout/Logout";
+import Welcome from "./Welcome/Welcome";
 
 import ('./Navigation.css');
 
@@ -18,7 +20,8 @@ const Navigation = (props) => {
                 &nbsp;
                 <Link className='navLink' to="/about">ABOUT</Link>
                 &nbsp;
-                <button onClick={props.logoutUser}>LOGOUT</button>
+                {currentUser ? <Welcome user={currentUser}/> : ''}
+                <Link className='navLink' to='/'><Logout logoutUser={props.logoutUser}/></Link>
                 &nbsp;
             </div>
         )
@@ -32,7 +35,7 @@ const Navigation = (props) => {
             &nbsp;
             <Link className='navLink' to="/about">ABOUT</Link>
             &nbsp;
-            <button onClick={props.setLoginUser}>LOGIN</button> <input type='text' placeholder='Enter your username...'/>
+            <Link className='navLink' to='/'><Login setLoginUser={props.setLoginUser}/></Link>
             &nbsp;
         </div>
     )
