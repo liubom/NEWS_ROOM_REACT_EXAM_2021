@@ -12,3 +12,21 @@
     color: black;
     margin-right: 25px;
 }
+
+button {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    color: black;
+    background-color: white;
+    border: none;
+    cursor: pointer;
+}
+
+button:focus{
+    outline: none;
+}
+
+input {
+    border: none;
+    outline: none;
+}

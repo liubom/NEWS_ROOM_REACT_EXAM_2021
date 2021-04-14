@@ -1,36 +1,38 @@
-import {useState} from "react";
+import {useEffect, useState} from "react";
 
 import ('./LikeArticleButton.css');
 
 
 const LikeArticleButton = (props) => {
 
-    const userName = '';
-    localStorage.setItem('user', userName);
     const currentUser = localStorage.getItem('user');
 
-    const currentLikes = JSON.parse(localStorage.getItem('likedArticles'));
+    const likes = JSON.parse(localStorage.getItem('likedArticles'));
     const articleID = props.a.id;
     let isLikedFromUser = '';
-    let isCurrentLikes = !!currentLikes;
+    let isCurrentLikes = !!likes;
 
     if (isCurrentLikes) {
-        isLikedFromUser = currentLikes.findIndex(u => {
+        isLikedFromUser = likes.findIndex(u => {
             return u.likes.includes(articleID) && u.user === currentUser;
         })
     } else {
         isLikedFromUser = -1;
     }
 
-    const [state, setSate] = useState(isLikedFromUser < 0 ? {
-        classN: "likeArticle",
-        buttonText: 'Like this article'
-    } : {classN: "likedArticle", buttonText: 'You like this article'});
+    const [state, setSate] = useState({});
+
+    useEffect(() => {
+        setSate(isLikedFromUser < 0 ? {
+            classN: "likeArticle",
+            buttonText: 'Like this article'
+        } : {classN: "likedArticle", buttonText: 'You like this article'})
+    }, [isLikedFromUser]);
 
     const likeArticle = (e) => {
 
         if (!isCurrentLikes) {
-            let likedArticles = JSON.stringify([{user: userName, likes: [articleID]}]);
+            let likedArticles = JSON.stringify([{user: currentUser, likes: [articleID]}]);
             localStorage.setItem('likedArticles', likedArticles);
             setSate({classN: "likedArticle", buttonText: 'You like this article'});
         } else {
@@ -55,12 +57,12 @@ const LikeArticleButton = (props) => {
     if (currentUser) {
         return (
             <button className={state.classN} onClick={likeArticle}>{state.buttonText}</button>
-        )
+        );
     }
 
     return (
         <></>
-    )
+    );
 }
 
 export default LikeArticleButton;

@@ -2,11 +2,11 @@ import React from "react";
 import Navigation from "./Navigation/Navigation";
 import ('./Header.css');
 
-const Header = () => {
+const Header = (props) => {
 
     return (
         <div className='mainHeader'>
-            <Navigation/>
+            <Navigation setLoginUser={props.setLoginUser} logoutUser={props.logoutUser}/>
             <div className='siteLogo'>News Room</div>
         </div>
     )
