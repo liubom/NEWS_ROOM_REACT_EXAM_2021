@@ -1,9 +1,14 @@
 import React, {useState, useEffect} from "react";
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
+
+import SimpleStorage from "react-simple-storage";
 import UserContext from "./context/UserContext";
+
 import Header from "./components/Header/Header";
 import Articles from "./components/Articles/Articles";
+import Search from "./components/Articles/Search/Search";
 import Contact from "./components/Contact/Contact";
+import NotFound from "./components/NotFound/NotFound";
 import Footer from "./components/Footer/Footer";
 import './App.css';
 import FavoriteArticles from "./components/Articles/FavoriteArticles/FavoriteArticles";
@@ -52,34 +57,12 @@ function App() {
 
     const userLikedArticlesIDs = userLikes[0] ? userLikes[0].likes : []; //Проверка
 
-    //--------------------------------------------
-    // const [temp, setTemp] = useState('');
-    //
-    // useEffect(() => {
-    //     fetch("http://api.weatherstack.com/current?access_key=c5a133241628e4a3a957a1b4821b5bcd&query=Sofia", {
-    //     })
-    //         .then(response => {
-    //             return response.json();
-    //         }).then(data => setTemp(data.current.temperature))
-    //         .catch(err => {
-    //             console.error(err);
-    //         });
-    // }, []);
-
-    // let temperature = temp.temperature
-    // let icon = temp.weather_icons[0];
-    // console.log(temperature);
-    // console.log(icon);
-    //console.log(temp);
-    //--------------------------------------------
-
-
     if (currentUser) {
         return (
             <div className="App">
                 <Weather/>
                 <Router>
-                    <UserContext.Provider value={user}>
+                    <UserContext.Provider value={this}>
                         <Header logoutUser={logoutUser} setLoginUser={setLoginUser} likedIDs={userLikedArticlesIDs}/>
                     </UserContext.Provider>
                     <Switch>
@@ -89,6 +72,9 @@ function App() {
                         <Route path='/liked'>
                             <FavoriteArticles allArticles={state} likes={userLikedArticlesIDs}/>
                         </Route>
+                        <Route path='/search'>
+                            <Search/>
+                        </Route>
                         <Route path='/contact'>
                             <Contact/>
                         </Route>
@@ -96,7 +82,7 @@ function App() {
                             <h2 style={{paddingTop: 60 + 'px'}}>About Page</h2>
                         </Route>
                         <Route path='*'>
-                            Page Not Found
+                            <NotFound/>
                         </Route>
                     </Switch>
                 </Router>
@@ -120,7 +106,7 @@ function App() {
                             <h2 style={{paddingTop: 60 + 'px'}}>About Page</h2>
                         </Route>
                         <Route path='*'>
-                            <h2>Page Not Found</h2>
+                            <NotFound/>
                         </Route>
                     </Switch>
                 </Router>

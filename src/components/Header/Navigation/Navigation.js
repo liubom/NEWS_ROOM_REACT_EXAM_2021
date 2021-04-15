@@ -24,7 +24,7 @@ const Navigation = (props) => {
                 &nbsp;
                 <Link className='navLink' to="/about">ABOUT</Link>
                 &nbsp;
-                {currentUser ? <Welcome user={currentUser}/> : ''}
+                {currentUser ? <Welcome user={currentUser}/> : false}
                 <Link className='navLink' to='/'><Logout logoutUser={props.logoutUser}/></Link>
                 &nbsp;
             </div>
@@ -39,7 +39,7 @@ const Navigation = (props) => {
             &nbsp;
             <Link className='navLink' to="/about">ABOUT</Link>
             &nbsp;
-            <Link className='navLink' to='/'><Login setLoginUser={props.setLoginUser}/></Link>
+            <Login setLoginUser={props.setLoginUser}/>
             &nbsp;
         </div>
     )

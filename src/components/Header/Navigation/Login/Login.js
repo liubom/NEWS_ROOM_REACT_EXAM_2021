@@ -1,8 +1,10 @@
-import React from "react";
+import React, {useState} from "react";
 
 import ('./Login.css');
 
 const Login = (props) => {
+
+    const [state, setState] = useState();
 
     const inputSet = (value) => {
         return value.toUpperCase();
@@ -20,7 +22,7 @@ const Login = (props) => {
             </button>
             <input onChange={(e) => {
                 e.currentTarget.value = inputSet(e.currentTarget.value);
-            }} type='text' placeholder='Enter your username...' className='login'/>
+            }} type='text' placeholder='ENTER USERNAME' className='login'/><span>Min 5 characters</span>
         </>
     );
 }
