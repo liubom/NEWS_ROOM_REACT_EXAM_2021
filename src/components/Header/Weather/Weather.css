@@ -1,12 +1,19 @@
 .weather {
     position: fixed;
-    right: 10px;
-    top: 80px;
+    right: 25px;
+    top: 88px;
     vertical-align: center;
+    /*border-right: #16bd4a solid 3px;*/
+    padding: 5px;
 }
 
 .weather_details{
    text-align: center;
+}
+
+.degree{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
 }
 
 .weather_det_text {

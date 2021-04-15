@@ -26,7 +26,7 @@ const Weather = (props) => {
                 <p className='weather_text'>Current Weather in Sofia</p>
                 <div className='weather_details'>
                     <p className='weather_det_time'>Observation Time {time}</p>
-                    <p className='weather_det_text'>Temperature: {temperature} 	&#8451;</p>
+                    <p className='weather_det_text'>Temperature: <span className='degree'>{temperature} &#8451;</span></p>
                     <p><img className='weather_img' src={icon[0]} alt={temperature}/></p>
                 </div>
             </div>
