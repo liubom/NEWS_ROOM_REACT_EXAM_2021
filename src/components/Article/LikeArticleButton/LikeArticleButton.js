@@ -1,7 +1,5 @@
 import {useEffect, useState} from "react";
-
 import ('./LikeArticleButton.css');
-
 
 const LikeArticleButton = (props) => {
 
@@ -30,6 +28,8 @@ const LikeArticleButton = (props) => {
     }, [isLikedFromUser]);
 
     const likeArticle = (e) => {
+
+        props.setLiked();
 
         if (!isCurrentLikes) {
             let likedArticles = JSON.stringify([{user: currentUser, likes: [articleID]}]);

@@ -11,7 +11,7 @@ function App() {
 
     const [state, setState] = useState([]);
     const [user, setUser] = useState('');
-
+    const [likedIds, setLikes] = useState(localStorage.getItem('likedArticles'));
 
     useEffect(() => {
         fetch("http://localhost:5000/articles")
@@ -20,7 +20,6 @@ function App() {
                 setState([result][0]);
             });
     }, []);
-
 
     const setLoginUser = (value) => {
         if (value.trim().length > 4) {
@@ -36,9 +35,13 @@ function App() {
         localStorage.removeItem('user');
     }
 
+    const setLikedArticles = () => {
+        setLikes([...likedIds]);
+    }
+
     const currentUser = localStorage.getItem('user');
 
-    const allLikedArticles = localStorage.getItem('likedArticles')? JSON.parse(localStorage.getItem('likedArticles')) : []; // Проверка дали съществува
+    const allLikedArticles = localStorage.getItem('likedArticles') ? JSON.parse(localStorage.getItem('likedArticles')) : []; // Проверка дали съществува
 
     const userLikes = allLikedArticles.filter(a => {
         return a.user === currentUser
@@ -56,7 +59,7 @@ function App() {
                     </UserContext.Provider>
                     <Switch>
                         <Route exact path='/'>
-                            <Articles articlesData={state}/>
+                            <Articles articlesData={state} setLiked={setLikedArticles}/>
                         </Route>
                         <Route path='/liked'>
                             <FavoriteArticles allArticles={state} likes={userLikedArticlesIDs}/>

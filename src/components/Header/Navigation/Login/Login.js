@@ -9,7 +9,6 @@ const Login = (props) => {
     }
 
     const logUser = (value) => {
-        console.log(value)
         return props.setLoginUser(value);
     }
 
