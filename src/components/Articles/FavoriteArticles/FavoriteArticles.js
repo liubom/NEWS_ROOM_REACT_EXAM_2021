@@ -24,7 +24,7 @@ const FavoriteArticles = (props) => {
     if (likedArticlesFull.length > 0) {
         return (
             <div className='articles'>
-                <h2>You can always find something interesting to read...</h2>
+                <h2>Your favorite articles are here, read them again.</h2>
                 {likedArticlesFull.map(a => <Article key={a.title} a={a}/>)}
             </div>
         )
@@ -32,8 +32,7 @@ const FavoriteArticles = (props) => {
 
     return (
         <div className='articles'>
-            <h2>You can always find something interesting to read...</h2>
-            <h3>add something...</h3>
+            <h2>It's empty now, but you can always add your favorite articles here.</h2>
         </div>
     )
 

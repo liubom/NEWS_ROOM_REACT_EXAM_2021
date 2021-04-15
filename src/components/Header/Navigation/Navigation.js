@@ -2,6 +2,7 @@ import {Link} from 'react-router-dom';
 import Login from "./Login/Login";
 import Logout from "./Logout/Logout";
 import Welcome from "./Welcome/Welcome";
+import InfoDot from "../InfoDot/InfoDot";
 
 import ('./Navigation.css');
 
@@ -15,6 +16,9 @@ const Navigation = (props) => {
                 <Link className='navLink' to="/">ALL ARTICLES</Link>
                 &nbsp;
                 <Link className='navLink' to="/liked">FAVORITE ARTICLES</Link>
+                <InfoDot likedIDs={props.likedIDs}/>
+                &nbsp;
+                <Link className='navLink' to="/search">SEARCH</Link>
                 &nbsp;
                 <Link className='navLink' to="/contact">CONTACT</Link>
                 &nbsp;

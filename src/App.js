@@ -11,7 +11,7 @@ function App() {
 
     const [state, setState] = useState([]);
     const [user, setUser] = useState('');
-    const [likedIds, setLikes] = useState(localStorage.getItem('likedArticles'));
+    const [likedIds, setLikes] = useState([]);
 
     useEffect(() => {
         fetch("http://localhost:5000/articles")
@@ -55,7 +55,7 @@ function App() {
             <div className="App">
                 <Router>
                     <UserContext.Provider value={user}>
-                        <Header logoutUser={logoutUser} setLoginUser={setLoginUser}/>
+                        <Header logoutUser={logoutUser} setLoginUser={setLoginUser} likedIDs={userLikedArticlesIDs}/>
                     </UserContext.Provider>
                     <Switch>
                         <Route exact path='/'>
