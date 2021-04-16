@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&family=Roboto:wght@500&display=swap');
 
-.add_comment_modal {
+.comments_modal {
     background: rgba(0, 0, 0, 0.3);
     position: fixed;
     overflow: auto;
@@ -11,7 +11,7 @@
     padding: 30px;
 }
 
-.add_comment_modal_content {
+.comments_modal_content {
     max-width: 800px;
     margin: 10vh auto;
     background: white;
@@ -19,7 +19,7 @@
     border-radius: 5px;
 }
 
-.close_add_comments {
+.close_comments {
     width: 110px;
     height: 35px;
     background-color: coral;
@@ -30,6 +30,6 @@
     cursor: pointer;
 }
 
-.close_add_comments:active{
+.close_comments:active{
     outline: none;
 }

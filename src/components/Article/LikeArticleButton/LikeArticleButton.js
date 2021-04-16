@@ -25,7 +25,7 @@ const LikeArticleButton = (props) => {
     useEffect(() => {
         setSate(isLikedFromUser < 0 ? {
             classN: "likeArticle",
-            buttonText: 'Like this article'
+            buttonText: 'LIKE THIS ARTICLE'
         } : {classN: "likedArticle", buttonText: 'You like this article'})
     }, [isLikedFromUser]);
 

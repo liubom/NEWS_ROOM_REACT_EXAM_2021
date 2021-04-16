@@ -1,10 +1,10 @@
 .readArticle {
     width: 120px;
-    height: 25px;
-    background-color: coral;
+    height: 20px;
+    background-color: rgba(26, 102, 212, 0.83);
     color: white;
     font-family: 'Roboto', sans-serif;
-    font-size: 14px;
+    font-size: 12px;
     border: none;
     cursor: pointer;
 }

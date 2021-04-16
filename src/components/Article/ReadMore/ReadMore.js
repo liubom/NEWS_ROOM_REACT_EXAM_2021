@@ -9,7 +9,7 @@ const ReadMore = (props) => {
     if (currentUser) {
         return (
             <p>
-                <button className='readArticle' onClick={props.toggleModal}>Read Full Text</button>
+                <button className='readArticle' onClick={props.toggleModal}>READ FULL TEXT</button>
             </p>
         )
     }
