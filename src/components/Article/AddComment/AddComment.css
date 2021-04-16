@@ -12,12 +12,41 @@
 }
 
 .add_comment_modal_content {
-    max-width: 800px;
-    height: 400px;
+    max-width: 600px;
+    max-height: 300px;
     margin: 10vh auto;
     background: white;
     padding: 30px;
     border-radius: 5px;
+}
+
+.comment_text_input{
+    width: 100%;
+    min-height: 100px;
+    max-height: 200px;
+    background-color: #e6eeee;
+    border: none;
+
+}
+
+.comment_text_input:focus{
+    outline: none;
+}
+
+.send_comment{
+    position: relative;
+    width: 110px;
+    height: 20px;
+    background-color: rgba(38, 93, 186, 0.87);
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    font-size: 11px;
+    border: none;
+    cursor: pointer;
+}
+
+.send_comment:focus{
+    outline: none;
 }
 
 .close_add_comments {
@@ -26,7 +55,7 @@
     background-color: coral;
     color: white;
     font-family: 'Roboto', sans-serif;
-    font-size: 12px;
+    font-size: 11px;
     border: none;
     cursor: pointer;
 }

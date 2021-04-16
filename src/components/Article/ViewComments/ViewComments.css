@@ -13,7 +13,7 @@
 
 .comments_modal_content {
     max-width: 800px;
-    height: 450px;
+    max-height: 450px;
     margin: 10vh auto;
     background: white;
     padding: 30px;
