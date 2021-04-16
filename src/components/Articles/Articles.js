@@ -4,8 +4,6 @@ import ('./Articles.css');
 
 const Articles = (props) => {
 
-    console.log(props);
-
     return (
         <div className='articles'>
             <h2 className='categoryTitle'>Latest News</h2>

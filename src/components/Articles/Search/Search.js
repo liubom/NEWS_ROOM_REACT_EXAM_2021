@@ -14,8 +14,6 @@ import ('./Search.css');
 
 const Search = (props) => {
 
-    console.log(props);
-
     const [searchResult, setSearch] = useStorageState(localStorage, 'searchFor', '');
     let [fieldValue, setFieldValue] = useState('');
 
