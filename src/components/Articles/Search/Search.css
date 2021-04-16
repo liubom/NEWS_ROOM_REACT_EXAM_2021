@@ -1,0 +1,39 @@
+.searchForm {
+    text-align: center;
+}
+
+.search_btn{
+    width: 100px;
+    height: 35px;
+    background-color: #1ab377;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    color: white;
+    outline: none;
+    border: none;
+    cursor: pointer;
+}
+
+h2.search{
+    padding-top: 60px;
+    text-align: center;
+}
+
+.search_btn:active{
+    outline: none;
+}
+
+.search_field{
+    width: 300px;
+    height: 34px;
+    margin-right: 10px;
+    border: none;
+    background-color: rgba(214, 220, 228, 0.76);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    color: #3d3d3d;
+}
+
+.search_field{
+    outline: none;
+}

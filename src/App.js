@@ -1,7 +1,7 @@
-import React, {useState, useEffect} from "react";
-import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
+import React, {useState, useEffect,} from "react";
+import {BrowserRouter as Router, Switch, Route, Redirect} from 'react-router-dom';
 
-import SimpleStorage from "react-simple-storage";
+import {useStorageState} from "react-storage-hooks";
 import UserContext from "./context/UserContext";
 
 import Header from "./components/Header/Header";
@@ -17,14 +17,16 @@ import Weather from "./components/Header/Weather/Weather";
 function App() {
 
     const [state, setState] = useState([]);
-    const [user, setUser] = useState('');
+    const [user, setUser] = useState(null);
     const [likedIds, setLikes] = useState([]);
+    const [allFetchedArticles, setAllFetched] = useStorageState(localStorage, 'fetched-articles', []);
 
     useEffect(() => {
         fetch("http://localhost:5000/articles")
             .then(res => res.json())
             .then((result) => {
                 setState([result][0]);
+                setAllFetched(result[0])
             });
     }, []);
 
@@ -73,7 +75,7 @@ function App() {
                             <FavoriteArticles allArticles={state} likes={userLikedArticlesIDs}/>
                         </Route>
                         <Route path='/search'>
-                            <Search/>
+                            <Search articlesData={state} setLiked={setLikedArticles}/>
                         </Route>
                         <Route path='/contact'>
                             <Contact/>

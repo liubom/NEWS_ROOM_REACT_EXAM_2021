@@ -3,12 +3,12 @@
     margin-bottom: 70px;
 }
 
-h2 {
+h2.favorite {
     font-family: 'Montserrat', sans-serif;
     text-align: center;
 }
 
-h3 {
+h3.favorite {
     font-family: 'Montserrat', sans-serif;
     text-align: center;
     font-size: 28px;

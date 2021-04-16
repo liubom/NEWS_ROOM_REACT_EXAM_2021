@@ -1,9 +1,10 @@
 .readArticle {
     width: 120px;
+    height: 25px;
     background-color: coral;
     color: white;
     font-family: 'Roboto', sans-serif;
-    font-size: 12px;
+    font-size: 14px;
     border: none;
     cursor: pointer;
 }

@@ -1,6 +1,7 @@
 .likeArticle {
     float: right;
     width: 130px;
+    height: 25px;
     background-color: #1a66d4;
     color: white;
     font-family: 'Montserrat', sans-serif;
@@ -16,6 +17,7 @@
 .likedArticle {
     float: right;
     width: 130px;
+    height: 25px;
     background-color: #1ab377;
     color: white;
     font-family: 'Montserrat', sans-serif;

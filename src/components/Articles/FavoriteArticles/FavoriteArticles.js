@@ -24,7 +24,7 @@ const FavoriteArticles = (props) => {
     if (likedArticlesFull.length > 0) {
         return (
             <div className='articles'>
-                <h2>Your favorite articles are here, read them again.</h2>
+                <h2 className='favorite'>Your favorite articles are here, read them again.</h2>
                 {likedArticlesFull.map(a => <Article key={a.title} a={a}/>)}
             </div>
         )

@@ -16,7 +16,7 @@ const FullTextModal = (props) => {
                     {props.aData.content}
                 </p>
                 <div>
-                    <button className='readArticle' onClick={props.toggleModal}>Close</button>
+                    <button className='close_article' onClick={props.toggleModal}>CLOSE</button>
                 </div>
             </div>
         </div>
