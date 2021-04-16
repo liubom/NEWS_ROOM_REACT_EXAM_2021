@@ -31,6 +31,7 @@ const Search = (props) => {
 
     return (
         <>
+            <div className='articles'>
             <h2 className='search'>Search for Article</h2>
             <div className='searchForm'>
                 <input onChange={(e) => {
@@ -41,6 +42,7 @@ const Search = (props) => {
             {searchResult.map(a => {
                 return <Article a={a} key={a.title} setLiked={props.setLiked}/>
             })}
+            </div>
         </>
     )
 }
