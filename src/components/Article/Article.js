@@ -1,4 +1,5 @@
 import LikeArticleButton from "./LikeArticleButton/LikeArticleButton";
+import AddCommentButton from "./AddCommentButton/AddCommentButton";
 import ReadMore from "./ReadMore/ReadMore";
 import FullTextModal from "./ReadMore/FullTextModal/FullTextModal";
 import {useState} from "react";
@@ -30,6 +31,7 @@ const Article = (props) => {
                     <div key={props.a.id + 'articleDate'} className='articleDate'>{props.a.date}</div>
                     <div key={props.a.id + 'articleAuthor'} className='articleAuthor'>Author: {props.a.author}</div>
                     <LikeArticleButton buttonKey={props.a.id + 'likeArticle'} a={props.a} setLiked={props.setLiked}/>
+                    <AddCommentButton/>
                 </div>
             </div>
         </>

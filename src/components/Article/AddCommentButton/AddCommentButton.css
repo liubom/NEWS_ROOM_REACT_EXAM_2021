@@ -1,0 +1,17 @@
+.add_comment_article_btn {
+    float: right;
+    display: block;
+    width: 130px;
+    height: 25px;
+    background-color: #d7c513;
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12px;
+    border: none;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+.add_comment_article_btn:focus{
+    outline: none;
+}
