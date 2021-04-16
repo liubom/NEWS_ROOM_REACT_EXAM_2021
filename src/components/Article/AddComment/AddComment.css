@@ -13,6 +13,7 @@
 
 .add_comment_modal_content {
     max-width: 800px;
+    height: 400px;
     margin: 10vh auto;
     background: white;
     padding: 30px;
@@ -21,11 +22,11 @@
 
 .close_add_comments {
     width: 110px;
-    height: 35px;
+    height: 20px;
     background-color: coral;
     color: white;
     font-family: 'Roboto', sans-serif;
-    font-size: 16px;
+    font-size: 12px;
     border: none;
     cursor: pointer;
 }

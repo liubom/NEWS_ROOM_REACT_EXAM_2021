@@ -1,11 +1,11 @@
 .likeArticle {
     float: right;
     width: 130px;
-    height: 20px;
-    background-color: rgba(26, 102, 212, 0.83);
+    height: 17px;
+    background-color: rgba(24, 91, 161, 0.76);
     color: white;
     font-family: 'Montserrat', sans-serif;
-    font-size: 12px;
+    font-size: 10px;
     border: none;
     cursor: pointer;
 }
@@ -17,11 +17,11 @@
 .likedArticle {
     float: right;
     width: 130px;
-    height: 20px;
+    height: 17px;
     background-color: rgba(26, 179, 119, 0.84);
     color: white;
     font-family: 'Montserrat', sans-serif;
-    font-size: 12px;
+    font-size: 10px;
     border: none;
     cursor: pointer;
 }

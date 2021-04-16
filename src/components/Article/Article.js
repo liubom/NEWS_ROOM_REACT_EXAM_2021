@@ -3,6 +3,7 @@ import AddCommentButton from "./AddCommentButton/AddCommentButton";
 import ReadMore from "./ReadMore/ReadMore";
 import FullTextModal from "./ReadMore/FullTextModal/FullTextModal";
 import {useState} from "react";
+import {useStorageState} from "react-storage-hooks";
 import ViewCommentsButton from "./ViewComments/ViewCommentsButton/ViewCommentsButton";
 import ViewComments from "./ViewComments/ViewComments";
 import AddComment from "./AddComment/AddComment";
@@ -14,6 +15,7 @@ const Article = (props) => {
     const [show, setShow] = useState(false);
     const [showAdd, setShowAdd] = useState(false);
     const [showView, setShowView] = useState(false);
+    const [comments, setComments] = useStorageState(localStorage, 'articles-comments', []);
 
     const toggleModal = () => {
         setShow(!show);
@@ -26,12 +28,6 @@ const Article = (props) => {
     const toggleModalView = () => {
         setShowView(!showView);
     }
-
-
-    let print = () => {
-        console.log('View comments clicked')
-    }
-
 
     return (
         <>

@@ -2,14 +2,14 @@
     float: right;
     display: block;
     width: 130px;
-    height: 20px;
-    background-color: rgba(167, 156, 21, 0.63);
+    height: 17px;
+    background-color: rgba(22, 122, 141, 0.58);
     color: white;
     font-family: 'Montserrat', sans-serif;
-    font-size: 12px;
+    font-size: 10px;
     border: none;
     cursor: pointer;
-    margin-right: 10px;
+    margin-right: 5px;
 }
 
 .add_comment_article_btn:focus{
