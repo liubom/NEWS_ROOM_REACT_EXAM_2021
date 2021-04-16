@@ -5,6 +5,7 @@
 }
 
 .articles {
+    min-height: 500px;
     min-width: 1000px;
     padding-top: 60px;
     margin-bottom: 70px;

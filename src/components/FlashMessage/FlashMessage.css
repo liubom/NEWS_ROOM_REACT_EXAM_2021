@@ -1,0 +1,7 @@
+.app_message{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12px;
+    position: fixed;
+    top: 40px;
+    left: 250px;
+}

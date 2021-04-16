@@ -4,6 +4,7 @@ import ReadMore from "./ReadMore/ReadMore";
 import FullTextModal from "./ReadMore/FullTextModal/FullTextModal";
 import {useState} from "react";
 import {useStorageState} from "react-storage-hooks";
+import FlashMessage from "../FlashMessage/FlashMessage";
 import ViewCommentsButton from "./ViewComments/ViewCommentsButton/ViewCommentsButton";
 import ViewComments from "./ViewComments/ViewComments";
 import AddComment from "./AddComment/AddComment";
@@ -15,6 +16,7 @@ const Article = (props) => {
     const [show, setShow] = useState(false);
     const [showAdd, setShowAdd] = useState(false);
     const [showView, setShowView] = useState(false);
+    const [message, setMessage] = useState(null);
     const [comments, setComments] = useStorageState(localStorage, 'articles-comments', []);
 
     const toggleModal = () => {
@@ -27,6 +29,13 @@ const Article = (props) => {
 
     const toggleModalView = () => {
         setShowView(!showView);
+    }
+
+    const setFlashMessage = (message) => {
+        setMessage(message);
+        setTimeout(() => {
+            setMessage(null);
+        }, 2600);
     }
 
     return (
@@ -47,9 +56,14 @@ const Article = (props) => {
                 <div className='articleBottom'>
                     <div key={props.a.id + 'articleDate'} className='articleDate'>{props.a.date}</div>
                     <div key={props.a.id + 'articleAuthor'} className='articleAuthor'>Author: {props.a.author}</div>
-                    <LikeArticleButton buttonKey={props.a.id + 'likeArticle'} a={props.a} setLiked={props.setLiked}/>
+
+                    {/*Тук да се оправи зеленивт бутон лайк...*/}
+                    <LikeArticleButton buttonKey={props.a.id + 'likeArticle'} a={props.a} setLiked={props.setLiked} flashMessage={setFlashMessage}/>
+
                     <AddCommentButton a={props.a} toggleModalAdd={toggleModalAdd}/>
                     <ViewCommentsButton a={props.a} toggleModalView={toggleModalView}/>
+
+                    {message && <FlashMessage type={'liked'}/>}
                 </div>
             </div>
         </>

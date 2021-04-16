@@ -31,6 +31,7 @@ const LikeArticleButton = (props) => {
 
     const likeArticle = (e) => {
 
+        props.flashMessage('liked');
         props.setLiked();
 
         if (!isCurrentLikes) {

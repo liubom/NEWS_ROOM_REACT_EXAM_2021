@@ -1,10 +1,10 @@
 import React, {useState, useEffect,} from "react";
 import {BrowserRouter as Router, Switch, Route, Redirect} from 'react-router-dom';
-
 import {useStorageState} from "react-storage-hooks";
-import UserContext from "./context/UserContext";
+
 
 import Header from "./components/Header/Header";
+import FlashMessage from "./components/FlashMessage/FlashMessage";
 import Articles from "./components/Articles/Articles";
 import Search from "./components/Articles/Search/Search";
 import Contact from "./components/Contact/Contact";
@@ -19,6 +19,7 @@ function App() {
     const [state, setState] = useState([]);
     const [user, setUser] = useState(null);
     const [likedIds, setLikes] = useState([]);
+    const [message, setMessage] = useState(null);
     const [allFetchedArticles, setAllFetched] = useStorageState(localStorage, 'fetched-articles', []);
 
     useEffect(() => {
@@ -48,6 +49,13 @@ function App() {
         setLikes([...likedIds]);
     }
 
+    // const setFlashMessage = (message) => {
+    //     setMessage(message);
+    //     setTimeout(() => {
+    //         setMessage(null);
+    //     }, 2600);
+    // }
+
     const currentUser = localStorage.getItem('user');
 
     const allLikedArticles = localStorage.getItem('likedArticles') ? JSON.parse(localStorage.getItem('likedArticles')) : []; // Проверка дали съществува
@@ -64,9 +72,8 @@ function App() {
             <div className="App">
                 <Weather/>
                 <Router>
-                    <UserContext.Provider value={this}>
-                        <Header logoutUser={logoutUser} setLoginUser={setLoginUser} likedIDs={userLikedArticlesIDs}/>
-                    </UserContext.Provider>
+                    <Header logoutUser={logoutUser} setLoginUser={setLoginUser} likedIDs={userLikedArticlesIDs}/>
+                    <FlashMessage type={message}/>
                     <Switch>
                         <Route exact path='/'>
                             <Articles articlesData={state} setLiked={setLikedArticles}/>

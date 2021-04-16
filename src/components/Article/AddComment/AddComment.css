@@ -22,9 +22,9 @@
 
 .comment_text_input{
     width: 100%;
-    min-height: 100px;
+    min-height: 150px;
     max-height: 200px;
-    background-color: #e6eeee;
+    background-color: #f2f8f8;
     border: none;
 
 }
@@ -36,7 +36,7 @@
 .send_comment{
     position: relative;
     width: 110px;
-    height: 20px;
+    height: 25px;
     background-color: rgba(38, 93, 186, 0.87);
     color: white;
     font-family: 'Roboto', sans-serif;
@@ -51,15 +51,20 @@
 
 .close_add_comments {
     width: 110px;
-    height: 20px;
+    height: 25px;
     background-color: coral;
     color: white;
     font-family: 'Roboto', sans-serif;
     font-size: 11px;
     border: none;
     cursor: pointer;
+    float: right;
 }
 
 .close_add_comments:active{
     outline: none;
+}
+
+.close_add{
+
 }
