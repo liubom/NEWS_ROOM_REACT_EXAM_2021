@@ -5,10 +5,12 @@ import ('./Header.css');
 const Header = (props) => {
 
     return (
-        <div className='mainHeader'>
-            <Navigation setLoginUser={props.setLoginUser} logoutUser={props.logoutUser} likedIDs={props.likedIDs}/>
-            <div className='siteLogo'>News Room</div>
-        </div>
+        <>
+            <div className='mainHeader'>
+                <Navigation setLoginUser={props.setLoginUser} logoutUser={props.logoutUser} likedIDs={props.likedIDs}/>
+                <div className='siteLogo'>News Room</div>
+            </div>
+        </>
     )
 }
 

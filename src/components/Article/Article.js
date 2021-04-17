@@ -19,7 +19,6 @@ const Article = (props) => {
     const [message, setMessage] = useState(null);
     const [comments, setComments] = useStorageState(localStorage, 'articles-comments', []);
 
-
     const toggleModal = () => {
         setShow(!show);
     }
@@ -36,7 +35,7 @@ const Article = (props) => {
         setMessage(message);
         setTimeout(() => {
             setMessage(null);
-        }, 2600);
+        }, 4500);
     }
 
     return (
@@ -58,7 +57,8 @@ const Article = (props) => {
                 <div className='articleBottom'>
                     <div key={props.a.id + 'articleDate'} className='articleDate'>{props.a.date}</div>
                     <div key={props.a.id + 'articleAuthor'} className='articleAuthor'>Author: {props.a.author}</div>
-                    <LikeArticleButton buttonKey={props.a.id + 'likeArticle'} a={props.a} setLiked={props.setLiked} flashMessage={setFlashMessage}/>
+                    <LikeArticleButton buttonKey={props.a.id + 'likeArticle'} a={props.a} setLiked={props.setLiked}
+                                       flashMessage={setFlashMessage}/>
                     <AddCommentButton a={props.a} toggleModalAdd={toggleModalAdd}/>
                     <ViewCommentsButton a={props.a} toggleModalView={toggleModalView}/>
                 </div>

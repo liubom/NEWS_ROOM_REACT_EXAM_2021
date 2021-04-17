@@ -1,10 +1,12 @@
 import React from "react";
+import LogMessage from "./LogMessage/LogMessage";
 
 import ('./Login.css');
 
 const Login = (props) => {
 
     const {setLoginUser} = props
+
 
     const logUser = (value) => {
         return setLoginUser(value);

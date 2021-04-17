@@ -1,7 +1,9 @@
 .app_message{
+    width: 150px;
+    background-color: #e57f39;
     font-family: 'Montserrat', sans-serif;
-    font-size: 12px;
-    position: fixed;
-    top: 40px;
-    left: 250px;
+    font-size: 15px;
+    font-weight: bold;
+    color: white;
+    padding: 0 10px 0 10px;
 }

@@ -7,7 +7,7 @@ const FlashMessage = ({type}) => {
 
     return (
         <>
-            {appMessages[type]}
+            <span className='app_message'>{appMessages[type]}</span>
         </>
     )
 }

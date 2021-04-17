@@ -22,6 +22,9 @@ const FavoriteArticles = (props) => {
     });
 
     if (likedArticlesFull.length > 0) {
+
+        likedArticlesFull.reverse();
+
         return (
             <div className='articles'>
                 <h2 className='favorite'>Your favorite articles are here, read them again.</h2>

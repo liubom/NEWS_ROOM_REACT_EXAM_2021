@@ -1,9 +1,10 @@
 import React, {useState, useEffect,} from "react";
-import {BrowserRouter as Router, Switch, Route, Redirect} from 'react-router-dom';
+import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 import {useStorageState} from "react-storage-hooks";
 
 
 import Header from "./components/Header/Header";
+import LogMessage from "./components/Header/Navigation/Login/LogMessage/LogMessage";
 import Articles from "./components/Articles/Articles";
 import Search from "./components/Articles/Search/Search";
 import Contact from "./components/Contact/Contact";
@@ -19,6 +20,7 @@ function App() {
     const [user, setUser] = useState(null);
     const [likedIds, setLikes] = useState([]);
     const [allFetchedArticles, setAllFetched] = useStorageState(localStorage, 'fetched-articles', []);
+    const [isUserValid, setIsUserValid] = useState(false);
 
     useEffect(() => {
         fetch("http://localhost:5000/articles")
@@ -32,13 +34,19 @@ function App() {
             .catch(error => console.error(error));
     });
 
+    const validUsers = ['liubo', 'mitko', 'pesho', 'martin'];
+
     const setLoginUser = (value) => {
-        if (value.trim().length > 4) {
+        if (value.trim().length > 4 && validUsers.includes(value.trim().toLowerCase())) {
             localStorage.setItem('user', value);
             setUser(value);
             setState([...state]);
         }
     }
+        setTimeout(() => {
+            setIsUserValid(false);
+        }, 2000);
+
 
     const logoutUser = () => {
         setUser('');
@@ -64,10 +72,10 @@ function App() {
     if (currentUser) {
         return (
             <div className="App">
+                {isUserValid && <LogMessage msg='Invalid Username'/>}
                 <Weather/>
                 <Router>
                     <Header logoutUser={logoutUser} setLoginUser={setLoginUser} likedIDs={userLikedArticlesIDs}/>
-                    {/*<FlashMessage type={message}/>*/}
                     <Switch>
                         <Route exact path='/'>
                             <Articles articlesData={state} setLiked={setLikedArticles}/>
