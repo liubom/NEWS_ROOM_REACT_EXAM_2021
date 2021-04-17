@@ -19,6 +19,7 @@ const Article = (props) => {
     const [message, setMessage] = useState(null);
     const [comments, setComments] = useStorageState(localStorage, 'articles-comments', []);
 
+
     const toggleModal = () => {
         setShow(!show);
     }
@@ -43,6 +44,7 @@ const Article = (props) => {
             <FullTextModal aData={props.a} toggleModal={toggleModal} show={show}/>
             <AddComment aData={props.a} toggleModalAdd={toggleModalAdd} showAdd={showAdd}/>
             <ViewComments aData={props.a} toggleModalView={toggleModalView} showView={showView}/>
+            <div className='message'>{message && <FlashMessage type={'liked'}/>}</div>
             <div key={props.a.id} className='article'>
                 <div key={props.a.id + 'articleTitle'} className='articleTitle'>{props.a.title}</div>
                 <div key={props.a.id + 'articleMain'} className='articleMain'>
@@ -56,14 +58,9 @@ const Article = (props) => {
                 <div className='articleBottom'>
                     <div key={props.a.id + 'articleDate'} className='articleDate'>{props.a.date}</div>
                     <div key={props.a.id + 'articleAuthor'} className='articleAuthor'>Author: {props.a.author}</div>
-
-                    {/*Тук да се оправи зеленивт бутон лайк...*/}
                     <LikeArticleButton buttonKey={props.a.id + 'likeArticle'} a={props.a} setLiked={props.setLiked} flashMessage={setFlashMessage}/>
-
                     <AddCommentButton a={props.a} toggleModalAdd={toggleModalAdd}/>
                     <ViewCommentsButton a={props.a} toggleModalView={toggleModalView}/>
-
-                    {message && <FlashMessage type={'liked'}/>}
                 </div>
             </div>
         </>

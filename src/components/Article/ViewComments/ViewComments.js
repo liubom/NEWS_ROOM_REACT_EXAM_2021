@@ -36,7 +36,8 @@ const ViewComments = (props) => {
                 <h3>{props.aData.title}</h3>
                 <h4>Comments</h4>
                 <div className='comments'>
-                    This Article isn't commented yet...
+                    There are no comments for this article so far.
+                    Be the first to comment on this article.
                 </div>
                 <div>
                     <button className='close_comments' onClick={props.toggleModalView}>CLOSE</button>

@@ -12,10 +12,7 @@ const AddComment = (props) => {
             return;
         }
 
-        const maxChars = 500;
-
         let ifArticleCommented = localStorage.getItem(`${props.aData.id}-article-comments`);
-        console.log(ifArticleCommented);
 
         if (!ifArticleCommented) {
 
@@ -44,7 +41,7 @@ const AddComment = (props) => {
                 <h3>{props.aData.title}</h3>
                 <div className='add_comments'>
                     <textarea onChange={(e) => {
-                        console.log(e.currentTarget.value.length);
+                        
                     }} className='comment_text_input'/>
                     <button className='send_comment' onClick={(e) => {
                         sendComment(e.currentTarget.previousSibling.value);

@@ -1,4 +1,5 @@
 import {useEffect, useState} from "react";
+
 import ('./LikeArticleButton.css');
 
 const LikeArticleButton = (props) => {
@@ -10,7 +11,7 @@ const LikeArticleButton = (props) => {
     let isLikedFromUser = '';
     let isCurrentLikes = !!likes;
     const likedAttributes = {classN: "likedArticle", buttonText: 'You like this article'};
-    const likeAttributes = {classN: "likedArticle", buttonText: 'You like this article'};
+    //const likeAttributes = {classN: "likedArticle", buttonText: 'You like this article'};
 
     if (isCurrentLikes) {
         isLikedFromUser = likes.findIndex(u => {
@@ -57,14 +58,20 @@ const LikeArticleButton = (props) => {
             }
         }
     }
-    if (currentUser) {
+    if (currentUser && isLikedFromUser < 0) {
         return (
             <button className={state.classN} onClick={likeArticle}>{state.buttonText}</button>
         );
+    } else if (currentUser && isLikedFromUser > -1) {
+        return (
+            <button className={state.classN}>{state.buttonText}</button>
+        )
     }
 
     return (
-        <></>
+        <>
+
+        </>
     );
 }
 

@@ -1,13 +1,5 @@
 import React, {useState} from "react";
 import Article from "../../Article/Article";
-import {
-    BrowserRouter as Router,
-    Link,
-    Route,
-    useParams,
-    useLocation,
-    Switch,
-} from 'react-router-dom';
 import {useStorageState} from "react-storage-hooks";
 
 import ('./Search.css');
@@ -15,12 +7,9 @@ import ('./Search.css');
 const Search = (props) => {
 
     const [searchResult, setSearch] = useStorageState(localStorage, 'searchFor', []);
-    let [fieldValue, setFieldValue] = useState('');
 
     const searchHandler = (e) => {
         e.preventDefault();
-
-        setFieldValue = e.currentTarget.value;
 
         fetch(`http://localhost:5000/articles?title_like=${e.currentTarget.previousSibling.value}`)
             .then(res => res.json())

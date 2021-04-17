@@ -75,3 +75,11 @@ img.articleImage {
     height: 150px;
     align-content: center;
 }
+
+.message{
+    height: 15px;
+    width: auto;
+    margin-top: 3px;
+    text-align: center;
+    font-size: 14px;
+}
