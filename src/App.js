@@ -4,7 +4,6 @@ import {useStorageState} from "react-storage-hooks";
 
 
 import Header from "./components/Header/Header";
-import FlashMessage from "./components/FlashMessage/FlashMessage";
 import Articles from "./components/Articles/Articles";
 import Search from "./components/Articles/Search/Search";
 import Contact from "./components/Contact/Contact";
@@ -19,17 +18,19 @@ function App() {
     const [state, setState] = useState([]);
     const [user, setUser] = useState(null);
     const [likedIds, setLikes] = useState([]);
-    const [message, setMessage] = useState(null);
     const [allFetchedArticles, setAllFetched] = useStorageState(localStorage, 'fetched-articles', []);
 
     useEffect(() => {
         fetch("http://localhost:5000/articles")
             .then(res => res.json())
             .then((result) => {
-                setState([result][0]);
-                setAllFetched(result[0])
-            });
-    }, []);
+                if (state.length === 0) {
+                    setState([result][0]);
+                    setAllFetched(result[0]);
+                }
+            })
+            .catch(error => console.error(error));
+    });
 
     const setLoginUser = (value) => {
         if (value.trim().length > 4) {
@@ -49,23 +50,16 @@ function App() {
         setLikes([...likedIds]);
     }
 
-    // const setFlashMessage = (message) => {
-    //     setMessage(message);
-    //     setTimeout(() => {
-    //         setMessage(null);
-    //     }, 2600);
-    // }
-
     const currentUser = localStorage.getItem('user');
 
-    const allLikedArticles = localStorage.getItem('likedArticles') ? JSON.parse(localStorage.getItem('likedArticles')) : []; // Проверка дали съществува
+    const allLikedArticles = localStorage.getItem('likedArticles') ? JSON.parse(localStorage.getItem('likedArticles')) : [];
 
     const userLikes = allLikedArticles.filter(a => {
         return a.user === currentUser
 
     });
 
-    const userLikedArticlesIDs = userLikes[0] ? userLikes[0].likes : []; //Проверка
+    const userLikedArticlesIDs = userLikes[0] ? userLikes[0].likes : [];
 
     if (currentUser) {
         return (
@@ -73,7 +67,7 @@ function App() {
                 <Weather/>
                 <Router>
                     <Header logoutUser={logoutUser} setLoginUser={setLoginUser} likedIDs={userLikedArticlesIDs}/>
-                    <FlashMessage type={message}/>
+                    {/*<FlashMessage type={message}/>*/}
                     <Switch>
                         <Route exact path='/'>
                             <Articles articlesData={state} setLiked={setLikedArticles}/>
@@ -123,7 +117,6 @@ function App() {
             </div>
         );
     }
-
 }
 
 export default App;

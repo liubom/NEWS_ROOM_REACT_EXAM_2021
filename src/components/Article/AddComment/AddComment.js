@@ -41,7 +41,7 @@ const AddComment = (props) => {
                 <h3>{props.aData.title}</h3>
                 <div className='add_comments'>
                     <textarea onChange={(e) => {
-                        
+
                     }} className='comment_text_input'/>
                     <button className='send_comment' onClick={(e) => {
                         sendComment(e.currentTarget.previousSibling.value);
