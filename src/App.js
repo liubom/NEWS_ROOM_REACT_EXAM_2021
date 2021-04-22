@@ -4,6 +4,7 @@ import {useStorageState} from "react-storage-hooks";
 
 
 import Header from "./components/Header/Header";
+import LogMessage from "./components/Header/Navigation/Login/LogMessage/LogMessage";
 import Articles from "./components/Articles/Articles";
 import Search from "./components/Articles/Search/Search";
 import Contact from "./components/Contact/Contact";
@@ -15,10 +16,13 @@ import Weather from "./components/Header/Weather/Weather";
 
 function App() {
 
+    const port = process.env.PORT || 5000;
+
     const [state, setState] = useState([]);
     const [user, setUser] = useState(null);
     const [likedIds, setLikes] = useState([]);
     const [allFetchedArticles, setAllFetched] = useStorageState(localStorage, 'fetched-articles', []);
+    const [isWrong, setIsWrong] = useState(false);
 
     useEffect(() => {
         fetch("http://localhost:5000/articles")
@@ -40,6 +44,13 @@ function App() {
             localStorage.setItem('user', value);
             setUser(value);
             setState([...state]);
+        } else {
+            setIsWrong(true);
+            console.log(isWrong);
+            setTimeout(() => {
+                setIsWrong(false);
+                console.log(isWrong);
+            }, 2500);
         }
     }
 
@@ -67,6 +78,7 @@ function App() {
     if (currentUser) {
         return (
             <div className="App">
+                {isWrong && <LogMessage msg={'Wrong Username'}/>}
                 <Weather/>
                 <Router>
                     <Header logoutUser={logoutUser} setLoginUser={setLoginUser} likedIDs={userLikedArticlesIDs}/>
