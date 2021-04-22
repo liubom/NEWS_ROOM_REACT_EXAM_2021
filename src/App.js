@@ -16,8 +16,6 @@ import Weather from "./components/Header/Weather/Weather";
 
 function App() {
 
-    const port = process.env.PORT || 5000;
-
     const [state, setState] = useState([]);
     const [user, setUser] = useState(null);
     const [likedIds, setLikes] = useState([]);
