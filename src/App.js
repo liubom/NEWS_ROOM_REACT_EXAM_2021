@@ -23,7 +23,7 @@ function App() {
     const [isWrong, setIsWrong] = useState(false);
 
     useEffect(() => {
-        fetch("http://localhost:5000/articles")
+        fetch("https://news-room-react-exam-2021-04-default-rtdb.firebaseio.com/articles.json")
             .then(res => res.json())
             .then((result) => {
                 if (state.length === 0) {
