@@ -1,6 +1,12 @@
 .logMessage{
+    width: 180px;
+    height: 16px;
+    text-align: center;
+    position: fixed;
+    top: 50px;
+    left: 360px;
     font-family: 'Montserrat', sans-serif;
     font-size: 12px;
-    padding: 0 10px 0 10px;
-    color: black;
+    background-color: coral;
+    color: white;
 }

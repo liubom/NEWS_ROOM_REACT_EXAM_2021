@@ -12,6 +12,7 @@ const Search = (props) => {
         e.preventDefault();
 
         fetch(`http://localhost:5000/articles?title_like=${e.currentTarget.previousSibling.value}`)
+        // fetch(`https://news-room-react-exam-2021-04-default-rtdb.firebaseio.com/articles.json`)
             .then(res => res.json())
             .then((result) => {
                 setSearch([result][0]);

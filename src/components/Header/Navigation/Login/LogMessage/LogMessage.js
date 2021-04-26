@@ -1,5 +1,3 @@
-import {useState} from "react";
-
 import ('./LogMessage.css');
 
 const LogMessage = ({msg}) => {

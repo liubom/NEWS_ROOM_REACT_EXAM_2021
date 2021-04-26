@@ -3,6 +3,8 @@ import Login from "./Login/Login";
 import Logout from "./Logout/Logout";
 import Welcome from "./Welcome/Welcome";
 import InfoDot from "../InfoDot/InfoDot";
+import React from "react";
+import LogMessage from "./Login/LogMessage/LogMessage";
 
 import ('./Navigation.css');
 
@@ -13,6 +15,7 @@ const Navigation = (props) => {
     if (currentUser) {
         return (
             <div className='nav'>
+                {props.isWrong && <LogMessage msg='Wrong Username'/>}
                 <Link className='navLink' to="/">ALL ARTICLES</Link>
                 &nbsp;
                 <Link className='navLink' to="/liked">FAVORITE ARTICLES</Link>
@@ -33,6 +36,7 @@ const Navigation = (props) => {
 
     return (
         <div className='nav'>
+            {props.isWrong && <LogMessage msg='Wrong Username'/>}
             <Link className='navLink' to="/">ALL ARTICLES</Link>
             &nbsp;
             <Link className='navLink' to="/contact">CONTACT</Link>

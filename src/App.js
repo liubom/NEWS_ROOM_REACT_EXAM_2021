@@ -44,11 +44,9 @@ function App() {
             setState([...state]);
         } else {
             setIsWrong(true);
-            console.log(isWrong);
             setTimeout(() => {
                 setIsWrong(false);
-                console.log(isWrong);
-            }, 2500);
+            }, 3000)
         }
     }
 
@@ -76,10 +74,9 @@ function App() {
     if (currentUser) {
         return (
             <div className="App">
-                {isWrong && <LogMessage msg={'Wrong Username'}/>}
                 <Weather/>
                 <Router>
-                    <Header logoutUser={logoutUser} setLoginUser={setLoginUser} likedIDs={userLikedArticlesIDs}/>
+                    <Header logoutUser={logoutUser} setLoginUser={setLoginUser} likedIDs={userLikedArticlesIDs} isWrong={isWrong}/>
                     <Switch>
                         <Route exact path='/'>
                             <Articles articlesData={state} setLiked={setLikedArticles}/>
@@ -109,7 +106,7 @@ function App() {
             <div className="App">
                 <Weather/>
                 <Router>
-                    <Header setLoginUser={setLoginUser} logoutUser={logoutUser}/>
+                    <Header setLoginUser={setLoginUser} logoutUser={logoutUser} isWrong={isWrong}/>
                     <Switch>
                         <Route exact path='/'>
                             <Articles articlesData={state}/>

@@ -7,7 +7,7 @@ const Header = (props) => {
     return (
         <>
             <div className='mainHeader'>
-                <Navigation setLoginUser={props.setLoginUser} logoutUser={props.logoutUser} likedIDs={props.likedIDs}/>
+                <Navigation setLoginUser={props.setLoginUser} logoutUser={props.logoutUser} likedIDs={props.likedIDs} isWrong={props.isWrong}/>
                 <div className='siteLogo'>News Room</div>
             </div>
         </>
