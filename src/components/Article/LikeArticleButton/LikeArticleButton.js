@@ -70,7 +70,6 @@ const LikeArticleButton = (props) => {
 
     return (
         <>
-
         </>
     );
 }
