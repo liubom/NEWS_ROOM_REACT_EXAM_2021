@@ -1,4 +1,4 @@
-import {ReactFragment} from "react";
+import React from "react";
 import LikeArticleButton from "./LikeArticleButton/LikeArticleButton";
 import AddCommentButton from "./AddCommentButton/AddCommentButton";
 import ReadMore from "./ReadMore/ReadMore";
@@ -40,7 +40,7 @@ const Article = (props) => {
     }
 
     return (
-        <ReactFragment>
+        <React.Fragment>
             <FullTextModal aData={props.a} toggleModal={toggleModal} show={show}/>
             <AddComment aData={props.a} toggleModalAdd={toggleModalAdd} showAdd={showAdd}/>
             <ViewComments aData={props.a} toggleModalView={toggleModalView} showView={showView}/>
@@ -64,7 +64,7 @@ const Article = (props) => {
                     <ViewCommentsButton a={props.a} toggleModalView={toggleModalView}/>
                 </div>
             </div>
-        </ReactFragment>
+        </React.Fragment>
     )
 }
 
