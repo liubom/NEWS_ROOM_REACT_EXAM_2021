@@ -36,7 +36,6 @@ function App() {
 
     const validUsers = ['liubo', 'mitko', 'pesho', 'martin'];
 
-
     const setLoginUser = (value) => {
         if (value.trim().length > 4 && validUsers.includes(value.trim().toLowerCase())) {
             localStorage.setItem('user', value);
