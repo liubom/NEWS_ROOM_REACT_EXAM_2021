@@ -3,7 +3,7 @@ import LikeArticleButton from "./LikeArticleButton/LikeArticleButton";
 import AddCommentButton from "./AddCommentButton/AddCommentButton";
 import ReadMore from "./ReadMore/ReadMore";
 import FullTextModal from "./ReadMore/FullTextModal/FullTextModal";
-import {Fragment, useState} from "react";
+import {useState} from "react";
 import {useStorageState} from "react-storage-hooks";
 import FlashMessage from "../FlashMessage/FlashMessage";
 import ViewCommentsButton from "./ViewComments/ViewCommentsButton/ViewCommentsButton";
@@ -18,7 +18,7 @@ const Article = (props) => {
     const [showAdd, setShowAdd] = useState(false);
     const [showView, setShowView] = useState(false);
     const [message, setMessage] = useState(null);
-    const [comments, setComments] = useStorageState(localStorage, 'articles-comments', []);
+    //const [comments, setComments] = useStorageState(localStorage, 'articles-comments', []);
 
     const toggleModal = () => {
         setShow(!show);

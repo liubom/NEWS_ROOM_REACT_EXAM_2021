@@ -14,7 +14,7 @@ const ViewComments = (props) => {
 
         const commentsArray = JSON.parse(isCommented);
         const comments = commentsArray.map(comment => {
-            return <Comment key={generateUniqueID.toString()} c={comment}/>
+            return <Comment key={generateUniqueID()} c={comment}/>
         }).reverse();
 
         return (

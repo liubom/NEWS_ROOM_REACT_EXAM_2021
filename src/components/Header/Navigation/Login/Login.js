@@ -1,5 +1,4 @@
 import React from "react";
-import LogMessage from "./LogMessage/LogMessage";
 
 import ('./Login.css');
 
