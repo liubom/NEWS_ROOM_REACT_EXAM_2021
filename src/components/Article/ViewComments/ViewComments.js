@@ -11,7 +11,10 @@ const ViewComments = (props) => {
 
     if (isCommented) {
 
-        let commentsArray = JSON.parse(isCommented);
+        const commentsArray = JSON.parse(isCommented);
+        const comments = commentsArray.map(comment => {
+            return <Comment key={comment.title} c={comment}/>
+        })
 
         return (
             <div className='comments_modal'>
@@ -22,9 +25,7 @@ const ViewComments = (props) => {
                     <div className='comments'>
                         <h3 className='article_title_comments'>{props.aData.title}</h3>
                         <h4 className='comments_title'>Comments</h4>
-                        {commentsArray.map(c => {
-                            return <Comment key={c.title} c={c}/>;
-                        })}
+                        {comments}
                     </div>
                 </div>
             </div>
