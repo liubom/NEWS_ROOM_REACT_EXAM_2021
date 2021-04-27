@@ -27,7 +27,7 @@ function App() {
         fetch("http://localhost:5000/articles")
             .then(res => res.json())
             .then((result) => {
-                if (state.length === 0 && state !== undefined) {
+                if (state.length === 0) {
                     setState([result][0]);
                     setAllFetched(result[0]);
                 }
