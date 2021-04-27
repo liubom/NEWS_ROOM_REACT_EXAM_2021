@@ -1,5 +1,6 @@
 import "./ViewComments.css";
 import Comment from "./Comment/Comment";
+import {generateUniqueID} from "web-vitals/dist/modules/lib/generateUniqueID";
 
 const ViewComments = (props) => {
 
@@ -13,7 +14,7 @@ const ViewComments = (props) => {
 
         const commentsArray = JSON.parse(isCommented);
         const comments = commentsArray.map(comment => {
-            return <Comment key={comment.title} c={comment}/>
+            return <Comment key={generateUniqueID.toString()} c={comment}/>
         })
 
         return (

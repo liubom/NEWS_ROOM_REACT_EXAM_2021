@@ -1,8 +1,9 @@
+import {ReactFragment} from "react";
 import LikeArticleButton from "./LikeArticleButton/LikeArticleButton";
 import AddCommentButton from "./AddCommentButton/AddCommentButton";
 import ReadMore from "./ReadMore/ReadMore";
 import FullTextModal from "./ReadMore/FullTextModal/FullTextModal";
-import {useState} from "react";
+import {Fragment, useState} from "react";
 import {useStorageState} from "react-storage-hooks";
 import FlashMessage from "../FlashMessage/FlashMessage";
 import ViewCommentsButton from "./ViewComments/ViewCommentsButton/ViewCommentsButton";
@@ -39,7 +40,7 @@ const Article = (props) => {
     }
 
     return (
-        <>
+        <ReactFragment>
             <FullTextModal aData={props.a} toggleModal={toggleModal} show={show}/>
             <AddComment aData={props.a} toggleModalAdd={toggleModalAdd} showAdd={showAdd}/>
             <ViewComments aData={props.a} toggleModalView={toggleModalView} showView={showView}/>
@@ -63,7 +64,7 @@ const Article = (props) => {
                     <ViewCommentsButton a={props.a} toggleModalView={toggleModalView}/>
                 </div>
             </div>
-        </>
+        </ReactFragment>
     )
 }
 

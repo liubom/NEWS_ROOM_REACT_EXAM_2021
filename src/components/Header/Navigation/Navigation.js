@@ -15,7 +15,6 @@ const Navigation = (props) => {
     if (currentUser) {
         return (
             <div className='nav'>
-                {/*{props.isWrong && <LogMessage msg='Wrong or missing username'/>}*/}
                 <Link className='navLink' to="/">ALL ARTICLES</Link>
                 &nbsp;
                 <Link className='navLink' to="/liked">FAVORITE ARTICLES</Link>
