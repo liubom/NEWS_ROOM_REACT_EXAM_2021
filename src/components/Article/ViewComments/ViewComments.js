@@ -15,7 +15,7 @@ const ViewComments = (props) => {
         const commentsArray = JSON.parse(isCommented);
         const comments = commentsArray.map(comment => {
             return <Comment key={generateUniqueID.toString()} c={comment}/>
-        })
+        }).reverse();
 
         return (
             <div className='comments_modal'>

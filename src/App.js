@@ -26,7 +26,7 @@ function App() {
         fetch("https://news-room-react-exam-2021-04-default-rtdb.firebaseio.com/articles.json")
             .then(res => res.json())
             .then((result) => {
-                if (state.length === 0) {
+                if (state.length === 0 && state !== undefined) {
                     setState([result][0]);
                     setAllFetched(result[0]);
                 }
