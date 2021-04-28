@@ -4,10 +4,11 @@
     text-align: center;
     position: fixed;
     top: 50px;
-    left: 360px;
+    left: 350px;
     font-family: 'Montserrat', sans-serif;
     font-size: 10px;
     letter-spacing: 1px;
-    border-left: coral solid 3px;
+    border-left: #e01616 solid 3px;
+    border-right: #e01616 solid 3px;
     color: black;
 }
