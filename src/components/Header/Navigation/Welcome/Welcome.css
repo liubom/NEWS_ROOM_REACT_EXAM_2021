@@ -2,5 +2,15 @@ span {
     font-family: 'Montserrat', sans-serif;
     font-size: 12px;
     color: #444444;
-    margin-left: 10px;
+    margin-left: 5px;
+    margin-bottom: 2px;
+}
+
+.welcomeName {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12px;
+    font-weight: bold;
+    color: #444444;
+    margin-left: 0;
+    letter-spacing: 1px;
 }

@@ -5,7 +5,7 @@ const Welcome = (props) => {
 
     return (
         <span>
-            WELCOME {props.user}
+            WELCOME <span className='welcomeName'>{props.user}</span>
         </span>
     );
 }

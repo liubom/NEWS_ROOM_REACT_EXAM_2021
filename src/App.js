@@ -45,7 +45,7 @@ function App() {
             setIsWrong(true);
             setTimeout(() => {
                 setIsWrong(false);
-            }, 3000)
+            }, 3500)
         }
     }
 

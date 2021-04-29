@@ -4,7 +4,11 @@ const LogMessage = ({msg}) => {
 
     return (
         <>
-            <span className='logMessage'>{msg}</span>
+            <div className='logMessage'>{msg}
+                <div className='bottomLine'>
+
+                </div>
+            </div>
         </>
     )
 }

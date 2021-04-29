@@ -15,7 +15,7 @@ const InfoDot = (props) => {
     if (visibleDot) {
         return (
             <div className='infoDot'>
-
+                {props.likedIDs.length > 5 ? '5+' : props.likedIDs.length}
             </div>
         )
     }
