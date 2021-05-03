@@ -4,7 +4,6 @@ import AddCommentButton from "./AddCommentButton/AddCommentButton";
 import ReadMore from "./ReadMore/ReadMore";
 import FullTextModal from "./ReadMore/FullTextModal/FullTextModal";
 import {useState} from "react";
-import {useStorageState} from "react-storage-hooks";
 import FlashMessage from "../FlashMessage/FlashMessage";
 import ViewCommentsButton from "./ViewComments/ViewCommentsButton/ViewCommentsButton";
 import ViewComments from "./ViewComments/ViewComments";
@@ -18,7 +17,6 @@ const Article = (props) => {
     const [showAdd, setShowAdd] = useState(false);
     const [showView, setShowView] = useState(false);
     const [message, setMessage] = useState(null);
-    //const [comments, setComments] = useStorageState(localStorage, 'articles-comments', []);
 
     const toggleModal = () => {
         setShow(!show);
@@ -36,7 +34,7 @@ const Article = (props) => {
         setMessage(message);
         setTimeout(() => {
             setMessage(null);
-        }, 4500);
+        }, 5000);
     }
 
     return (

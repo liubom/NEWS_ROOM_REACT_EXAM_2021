@@ -1,8 +1,21 @@
-.app_message{
+.app_message {
     width: 150px;
     background-color: #e57f39;
     font-family: 'Montserrat', sans-serif;
     font-size: 10px;
     color: white;
     padding: 0 10px 0 10px;
+
+    animation-name: likeAdded;
+    animation-duration: 1s;
+    animation-delay: 4s;
+}
+
+@keyframes likeAdded {
+    from {
+        background-color: #e57f39;
+    }
+    to {
+        background-color: white;
+    }
 }
