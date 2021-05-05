@@ -6,15 +6,14 @@ const Login = (props) => {
 
     const {setLoginUser} = props
 
-
-    const logUser = (value) => {
-        return setLoginUser(value);
-    }
+    // const logUser = (value) => {
+    //     return setLoginUser(value);
+    // }
 
     return (
         <>
             <button onClick={(e) => {
-                logUser(e.currentTarget.nextElementSibling.value);
+                setLoginUser(e.currentTarget.nextElementSibling.value);
             }} className='login'>LOGIN
             </button>
             <input onChange={(e) => {
